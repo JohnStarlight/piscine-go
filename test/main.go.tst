@@ -1,12 +1,14 @@
 package main
 
 import (
-	"fmt"
-
 	"piscine"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
-	arg1 := 4
-	fmt.Println(piscine.Fibonacci(arg1))
+	z01.PrintRune(piscine.FirstRune("Hello!"))
+	z01.PrintRune(piscine.FirstRune("Salut!"))
+	z01.PrintRune(piscine.FirstRune("Ola!"))
+	z01.PrintRune('\n')
 }
