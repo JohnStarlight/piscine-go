@@ -1,4 +1,4 @@
-package printparams
+package main
 
 import (
 	"os"
