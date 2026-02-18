@@ -23,5 +23,5 @@ func main() {
 	defer file.Close()
 
 	io.Copy(os.Stdout, file)
-	fmt.Println()
+	// fmt.Println()
 }
