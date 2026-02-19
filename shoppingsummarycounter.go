@@ -1,0 +1,20 @@
+package piscine
+
+func ShoppingSummaryCounter(str string) map[string]int {
+	word := ""
+	counts := make(map[string]int)
+
+	for _, v := range str {
+		if v != ' ' {
+			word += string(v)
+		} else {
+			counts[word]++
+			word = ""
+		}
+	}
+	if word != "" {
+		counts[word]++
+		word = ""
+	}
+	return counts
+}
