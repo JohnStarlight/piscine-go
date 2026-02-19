@@ -8,18 +8,15 @@ func ShoppingSummaryCounter(str string) map[string]int {
 		if v != ' ' {
 			word += string(v)
 		} else {
-			// This block skips adding anything to the map if word is ""
-			if word != "" {
-				counts[word]++
-			}
+			// Remove the 'if word != ""' guard.
+			// This allows the map to count "" when it hits multiple spaces.
+			counts[word]++
 			word = ""
 		}
 	}
 
-	// Final check for the last word
-	if word != "" {
-		counts[word]++
-	}
+	// Always add the last word, even if it's empty
+	counts[word]++
 
 	return counts
 }
