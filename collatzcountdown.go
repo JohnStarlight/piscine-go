@@ -1,14 +1,16 @@
 package piscine
 
 func CollatzCountdown(start int) int {
-	var steps int
+	steps := 0
 
+	if start <= 0 {
+		return -1
+	}
 	for start != 1 {
 		if start%2 == 0 {
 			start /= 2
 			steps++
-		}
-		if start%2 == 1 {
+		} else {
 			start *= 3
 			start++
 			steps++
