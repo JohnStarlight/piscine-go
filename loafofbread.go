@@ -3,7 +3,6 @@ package piscine
 func LoafOfBread(str string) string {
 	runes := []rune(str)
 
-	// count non-space chars
 	count := 0
 	for _, c := range runes {
 		if c != ' ' {
@@ -17,7 +16,6 @@ func LoafOfBread(str string) string {
 	result := []rune{}
 	i := 0
 	for i < len(runes) {
-		// collect 5 non-space chars
 		taken := 0
 		for i < len(runes) && taken < 5 {
 			if runes[i] != ' ' {
@@ -26,16 +24,23 @@ func LoafOfBread(str string) string {
 			}
 			i++
 		}
-		if taken > 0 {
-			result = append(result, '\n')
+		if taken == 0 {
+			break
 		}
-		// skip 1 non-space char
+		// find and output the next non-space char as separator, or \n if none
+		skipped := false
 		for i < len(runes) {
 			if runes[i] != ' ' {
+				result = append(result, runes[i])
+				result = append(result, '\n')
 				i++
+				skipped = true
 				break
 			}
 			i++
+		}
+		if !skipped {
+			result = append(result, '\n')
 		}
 	}
 	return string(result)
