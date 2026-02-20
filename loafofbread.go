@@ -21,9 +21,12 @@ func LoafOfBread(str string) string {
 		end := i + 5
 		if end > len(chars) {
 			end = len(chars)
+			result = append(result, chars[i:end]...)
+			i = end
+		} else {
+			result = append(result, chars[i:end]...)
+			i += 6
 		}
-		result = append(result, chars[i:end]...)
-		i += 6
 	}
 	result = append(result, '\n')
 	return string(result)
