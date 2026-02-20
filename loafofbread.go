@@ -1,7 +1,7 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	// count non-space chars
+	// count non-space
 	count := 0
 	for _, r := range str {
 		if r != ' ' {
@@ -13,27 +13,20 @@ func LoafOfBread(str string) string {
 	}
 
 	result := ""
-	i := 0
+	collected := 0
 
-	for i < len(str) {
-		collected := 0
+	for i := 0; i < len(str); i++ {
+		// copy char always
+		result += string(str[i])
 
-		// collect 5 non-space chars
-		for i < len(str) && collected < 5 {
-			if str[i] != ' ' {
-				result += string(str[i])
-				collected++
-			}
-			i++
+		if str[i] != ' ' {
+			collected++
 		}
 
-		if collected < 5 {
-			break
-		}
-
-		// skip next character (even space)
-		if i < len(str) {
-			i++
+		// when 5 reached → skip next char
+		if collected == 5 {
+			collected = 0
+			i++ // skip
 		}
 	}
 
