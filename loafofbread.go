@@ -1,6 +1,5 @@
 package piscine
 
-// test
 func LoafOfBread(str string) string {
 	var chars []rune
 	for _, c := range str {
@@ -24,7 +23,7 @@ func LoafOfBread(str string) string {
 			end = len(chars)
 		}
 		result = append(result, chars[i:end]...)
-		i += 5
+		i += 6
 	}
 	result = append(result, '\n')
 	return string(result)
