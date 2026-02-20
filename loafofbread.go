@@ -1,3 +1,5 @@
+package piscine
+
 func LoafOfBread(str string) string {
 	// count non-space chars
 	n := 0
