@@ -1,5 +1,6 @@
 package piscine
 
+// test
 func LoafOfBread(str string) string {
 	var chars []rune
 	for _, c := range str {
