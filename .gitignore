@@ -1,0 +1,3 @@
+# Ignore command binaries and test runners
+cmd/
+test/
