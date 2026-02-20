@@ -27,21 +27,11 @@ func LoafOfBread(str string) string {
 		if taken == 0 {
 			break
 		}
-		// find and output the next non-space char as separator, or \n if none
-		skipped := false
-		for i < len(runes) {
-			if runes[i] != ' ' {
-				result = append(result, runes[i])
-				result = append(result, '\n')
-				i++
-				skipped = true
-				break
-			}
+		if i < len(runes) {
+			result = append(result, runes[i])
 			i++
 		}
-		if !skipped {
-			result = append(result, '\n')
-		}
+		result = append(result, '\n')
 	}
 	return string(result)
 }
