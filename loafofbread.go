@@ -22,7 +22,12 @@ func LoafOfBread(str string) string {
 		if count == 0 {
 			break
 		}
-		if i < len(runes) {
+		if i < len(runes) { // If we are not at the end of the string.
+			// If the character to be replaced is the very last one,
+			// break the loop, effectively dropping it without adding a space.
+			if i == len(runes)-1 {
+				break
+			}
 			res = append(res, ' ')
 			i++
 		}
