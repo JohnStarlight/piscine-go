@@ -15,13 +15,16 @@ func LoafOfBread(str string) string {
 	result := []rune{}
 	i := 0
 	for i < len(chars) {
+		if i > 0 {
+			result = append(result, ' ')
+		}
 		end := i + 5
 		if end > len(chars) {
 			end = len(chars)
 		}
 		result = append(result, chars[i:end]...)
-		result = append(result, '\n')
-		i += 6
+		i += 5
 	}
+	result = append(result, '\n')
 	return string(result)
 }
