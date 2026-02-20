@@ -19,12 +19,8 @@ func LoafOfBread(str string) string {
 		if count == 0 {
 			break
 		}
-		for i < len(runes) {
-			if runes[i] != ' ' {
-				res = append(res, ' ')
-				i++
-				break
-			}
+		if i < len(runes) {
+			res = append(res, ' ')
 			i++
 		}
 	}
