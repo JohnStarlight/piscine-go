@@ -1,7 +1,6 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	// Remove spaces
 	var chars []rune
 	for _, c := range str {
 		if c != ' ' {
@@ -16,7 +15,6 @@ func LoafOfBread(str string) string {
 	result := ""
 	i := 0
 	for i < len(chars) {
-		// Take up to 5 chars
 		end := i + 5
 		if end > len(chars) {
 			end = len(chars)
@@ -25,7 +23,7 @@ func LoafOfBread(str string) string {
 			result += string(c)
 		}
 		result += "\n"
-		i += 5 + 1 // skip next char after group of 5
+		i += 6
 	}
 	return result
 }
