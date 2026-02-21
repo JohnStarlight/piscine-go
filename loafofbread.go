@@ -1,15 +1,15 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	if str == "" {
-		return "\n"
-	}
-
 	nonSpace := 0
 	for _, c := range str {
 		if c != ' ' {
 			nonSpace++
 		}
+	}
+
+	if nonSpace == 0 {
+		return "\n"
 	}
 	if nonSpace < 5 {
 		return "Invalid Output\n"
@@ -34,7 +34,6 @@ func LoafOfBread(str string) string {
 		}
 	}
 
-	// Αφαίρεσε trailing spaces
 	for len(result) > 0 && result[len(result)-1] == ' ' {
 		result = result[:len(result)-1]
 	}
