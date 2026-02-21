@@ -33,5 +33,11 @@ func LoafOfBread(str string) string {
 			i++
 		}
 	}
+
+	// Αφαίρεσε trailing spaces
+	for len(result) > 0 && result[len(result)-1] == ' ' {
+		result = result[:len(result)-1]
+	}
+
 	return result + "\n"
 }
