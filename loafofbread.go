@@ -1,36 +1,37 @@
-package piscine
-
 func LoafOfBread(str string) string {
-	runes := []rune(str)
-	if len(runes) == 0 {
-		return "\n"
+	nonSpace := 0
+	for _, c := range str {
+		if c != ' ' {
+			nonSpace++
+		}
 	}
-	if len(runes) < 5 {
+	if nonSpace < 5 {
 		return "Invalid Output\n"
 	}
-	var res []rune
+
+	result := ""
 	i := 0
-	for i < len(runes) {
+	for i < len(str) {
+		if result != "" {
+			result += " "
+		}
+		// Μάζεψε 5 non-space χαρακτήρες
 		count := 0
-		for i < len(runes) && count < 5 {
-			if runes[i] != ' ' {
-				res = append(res, runes[i])
+		for i < len(str) && count < 5 {
+			if str[i] != ' ' {
+				result += string(str[i])
 				count++
 			}
 			i++
 		}
-		if count == 0 {
-			break
+		// Skip 1: αν είναι space, το skip γίνεται φυσικά, αλλιώς skip το γράμμα
+		for i < len(str) && str[i] == ' ' {
+			i++
 		}
-		if i < len(runes) { // If we are not at the end of the string.
-			// If the character to be replaced is the very last one,
-			// break the loop, effectively dropping it without adding a space.
-			if i == len(runes)-1 {
-				break
-			}
-			res = append(res, ' ')
+		// skip το ένα γράμμα
+		if i < len(str) {
 			i++
 		}
 	}
-	return string(res) + "\n"
+	return result + "\n"
 }
