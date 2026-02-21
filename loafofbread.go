@@ -1,3 +1,5 @@
+package piscine
+
 func LoafOfBread(str string) string {
 	nonSpace := 0
 	for _, c := range str {
