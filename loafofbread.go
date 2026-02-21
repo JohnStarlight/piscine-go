@@ -1,5 +1,3 @@
-package piscine
-
 func LoafOfBread(str string) string {
 	nonSpace := 0
 	for _, c := range str {
@@ -17,7 +15,6 @@ func LoafOfBread(str string) string {
 		if result != "" {
 			result += " "
 		}
-		// Μάζεψε 5 non-space χαρακτήρες
 		count := 0
 		for i < len(str) && count < 5 {
 			if str[i] != ' ' {
@@ -26,11 +23,8 @@ func LoafOfBread(str string) string {
 			}
 			i++
 		}
-		// Skip 1: αν είναι space, το skip γίνεται φυσικά, αλλιώς skip το γράμμα
-		for i < len(str) && str[i] == ' ' {
-			i++
-		}
-		// skip το ένα γράμμα
+		// Skip: αν είναι space, αυτό μετράει ως skip
+		// αν είναι γράμμα, skip αυτό
 		if i < len(str) {
 			i++
 		}
