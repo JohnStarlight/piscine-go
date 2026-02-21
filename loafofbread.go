@@ -1,6 +1,10 @@
 package piscine
 
 func LoafOfBread(str string) string {
+	if str == "" {
+		return "\n"
+	}
+
 	nonSpace := 0
 	for _, c := range str {
 		if c != ' ' {
@@ -25,8 +29,6 @@ func LoafOfBread(str string) string {
 			}
 			i++
 		}
-		// Skip: αν είναι space, αυτό μετράει ως skip
-		// αν είναι γράμμα, skip αυτό
 		if i < len(str) {
 			i++
 		}
