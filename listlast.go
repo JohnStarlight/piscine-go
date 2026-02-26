@@ -15,6 +15,7 @@ func ListLast(l *List) interface{} {
 	last := current
 	for current != nil {
 		last = current
+		current = current.Next
 	}
 	return last
 }
