@@ -12,7 +12,7 @@ package piscine
 
 func ListLast(l *List) interface{} {
 	if l.Tail == nil {
-		return nil // empty list guard
+		return nil
 	}
 	return l.Tail.Data
 }
