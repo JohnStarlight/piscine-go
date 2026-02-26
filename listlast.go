@@ -11,11 +11,8 @@ package piscine
 // }
 
 func ListLast(l *List) interface{} {
-	current := l.Head
-	last := current
-	for current != nil {
-		last = current
-		current = current.Next
+	if l.Tail == nil {
+		return nil // empty list guard
 	}
-	return last
+	return l.Tail.Data
 }
