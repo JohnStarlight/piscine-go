@@ -4,3 +4,4 @@ test/
 
 # Ignore VS Code workspace settings
 .vscode/
+piscine-go.code-workspace
